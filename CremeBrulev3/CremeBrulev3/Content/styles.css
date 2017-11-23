@@ -1,0 +1,33 @@
+﻿body {
+}
+
+#headercolor {
+    background-color: #21618C;
+}
+
+.headerleon {
+    padding: 0;
+}
+
+#logo {
+    height: 100px;
+}
+
+#buscar {
+    width: 300px;
+    padding-top: 23px;
+}
+
+#headernav li {
+    border-left: 1px solid;
+}
+
+#productos {
+    padding: 16px;
+    color: darkgray;
+}
+
+
+.navi {
+    padding: 0 10px;
+}
