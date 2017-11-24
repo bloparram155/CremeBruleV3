@@ -13,5 +13,10 @@ namespace CremeBrulev3.Controllers
         {
             return View();
         }
+
+        public ActionResult RegistroUsuario()
+        {
+            return View();
+        }
     }
 }
