@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Direcciones";
+}
+
+<h2>Direcciones</h2>
+<div class="row">
+    <button class="btn btn-primary btn-block btn-lg" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapseExample">
+        Agregar Direccion
+    </button>
+    <div class="collapse" id="collapse2">
+        <div class="form-group">
+            <label for="coloniaTxt" class="control-label col-md-2">Colonia</label>
+            <div class="col-md-10">
+                <input id="coloniaTxt" type="text" class="form-control" name="coloniaTxt" placeholder="Colonia" />
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label for="calleTxt" class="control-label col-md-2">Calle</label>
+            <div class="col-md-10">
+                <input id="calleTxt" type="text" class="form-control" name="calleTxt" placeholder="Calle" />
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label for="estadoTxt" class="control-label col-md-2">Estado</label>
+            <div class="col-md-10">
+                <input id="estadoTxt" type="text" class="form-control" name="EstadoTxt" placeholder="Estado" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="ciudadTxt" class="control-label col-md-2">Ciudad</label>
+            <div class="col-md-10">
+                <input id="ciudadTxt" type="text" class="form-control" name="CiudadTxt" placeholder="Ciudad" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="codigoPostalTxt" class="control-label col-md-2">Ciudad</label>
+            <div class="col-md-10">
+                <input id="codigoPostalTxt" type="text" class="form-control" name="codigoPostalTxt" placeholder="CP" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="button" name="btnSubmit" value="Agregar Dirección" class="btn btn-default" />
+            </div>
+        </div>
+
+    </div>
+</div>

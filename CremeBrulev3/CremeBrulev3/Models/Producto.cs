@@ -4,12 +4,14 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.Serialization;
 
 namespace CremeBrulev3.Models
 {
+    
     public class Producto
     {
-
+        
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ProductoID { get; set; }
@@ -21,7 +23,6 @@ namespace CremeBrulev3.Models
         public string Presentacion { get; set; }
         [Required]
         public int CodigoProducto { get; set; }
-        
         [Required]
         public int Cantidad { get; set; }
         [Required]

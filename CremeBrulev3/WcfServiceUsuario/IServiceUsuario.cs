@@ -15,8 +15,10 @@ namespace WcfServiceUsuario
     {
 
         [OperationContract]
-        string AddUser(Usuario usuario);
+        bool AddUser(string nombre, string email, string password);
         // TODO: Add your service operations here
+        [OperationContract]
+        bool LoginUser(string email, string password);
     }
 
 

@@ -14,26 +14,61 @@ namespace WcfServiceUsuario
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IServiceUsuario
     {
-        public string AddUser(Usuario usuario)
+        public bool AddUser(string nombre,string email,string password)
         {
             try
             {
                 ContextModel context= new ContextModel();
                 Usuario user = new Usuario();
-                user.Nombre = usuario.Nombre;
-                user.Email = usuario.Email;
-                user.Password = usuario.Password;
+                user.Nombre = nombre;
+                user.Email = email;
+                user.Password = password;
                 //user.TipoUsuario = usuario.TipoUsuario;
                 //user.CuentaVerificada = usuario.CuentaVerificada;
                 context.Usuario.Add(user);
                 context.SaveChanges();
-                return "true";
+                return true;
             }
-            catch(Exception m)
+            catch(Exception)
             {
-                return m.Message ;
+                return false;
             }
             
+        }
+
+        public bool LoginUser(string email,string password)
+        {
+            bool status = false;
+            try
+            {
+                ContextModel db = new ContextModel();
+                Usuario user = db.Usuario.Where(x => x.Email == email).FirstOrDefault();
+                if (user != null)
+                {
+                    if(user.Password == password)
+                    {
+                       status= true;
+                    }
+                }
+                else
+                {
+                   status =false;
+                }
+            }
+            catch (Exception )
+            {
+                return false; 
+            }
+
+            return status;
+        }
+
+        public Usuario SessionUser(string email)
+        {
+            bool status = false;
+            ContextModel db = new ContextModel();
+            Usuario user = db.Usuario.Where(x => x.Email == email).FirstOrDefault();
+            return user;
         }
     }
 }
