@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<script src="~/Scripts/jquery-3.2.1.js"></script>
+<script src="~/Scripts/jquery-3.2.1.min.js"></script>
+<script src="~/Scripts/ValidarLogin.js"></script>
+
+
+
+
+    <div class="form-horizontal">
+        <h2>Login</h2>
+        <div class="form-group">
+            <label for="emailTxt" class="control-label col-md-2">Email</label>
+            <div class="col-md-10">
+                <input id="emailTxt" type="text" class="form-control" name="emailTxt" placeholder="Email" />
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="passwordTxt" class="control-label col-md-2">Password</label>
+            <div class="col-md-10">
+                <input id="passwordTxt" type="text" class="form-control" name="passwordTxt" placeholder="Password" />
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="button" name="btnSubmit" value="Iniciar Sesión" class="btn btn-default" onclick="validarSesion()" />
+            </div>
+        </div>
+    </div>
+
+    
