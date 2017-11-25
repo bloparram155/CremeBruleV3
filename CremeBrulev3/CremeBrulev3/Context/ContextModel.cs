@@ -11,11 +11,12 @@ namespace CremeBrulev3.Context
     public class ContextModel :DbContext
     {
 
-        DbSet<Carrito> Carrito { get; set; }
-        DbSet<Direccion> Direccion { get; set; }
-        DbSet<Orden> Orden { get; set; }
-        DbSet<Producto> Producto { get; set; }
-        DbSet<Usuario> Usuario { get; set; }
+        public DbSet<Carrito> Carrito { get; set; }
+        public DbSet<Direccion> Direccion { get; set; }
+        public DbSet<Orden> Orden { get; set; }
+        public DbSet<Producto> Producto { get; set; }
+        public DbSet<Usuario> Usuario { get; set; }
+
         public ContextModel() :base ("name = FarmaciaModel")
         {
 
@@ -25,6 +26,8 @@ namespace CremeBrulev3.Context
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+            modelBuilder.Conventions.Remove<PluralizingEntitySetNameConvention>();
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
     }
 }

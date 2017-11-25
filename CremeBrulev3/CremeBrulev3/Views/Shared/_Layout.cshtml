@@ -9,6 +9,7 @@
     <link href="~/Content/styles.css" rel="stylesheet" type="text/css"/>
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
+
 <body>
     <header class="nav navbar-inverse">
         <div class="container-fluid">
@@ -57,6 +58,10 @@
                         <li><a href="@Url.Action("Registro","Usuario")"><span class="glyphicon glyphicon-user"></span> Registrarse</a></li>
                         <li><a href="@Url.Action("Login","Usuario")"><span class="glyphicon glyphicon-log-in"></span> Iniciar Sesión</a></li>
                         <li><a href="@Url.Action("Index","Carrito")"><span class="glyphicon glyphicon-shopping-cart"></span> Carrito</a></li>
+                        @if ( Session["UsuarioID"] != null)
+                        {
+                            <li><a href="@Url.Action("Perfil","Usuario")"><span class="glyphicon glyphicon-cog"></span>Tu Perfil</a></li>
+                        }
                     </ul>
                 </div>
             </div>
@@ -76,7 +81,7 @@
 
     <div class="container body-content">
         @RenderBody()
-        <hr />
+        <hr/>
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
