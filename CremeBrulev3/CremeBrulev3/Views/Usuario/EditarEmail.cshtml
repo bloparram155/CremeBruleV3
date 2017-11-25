@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "EditarEmail";
+}
+
+<div class="container">
+    <h2>Aqui puedes editar tu Email</h2>
+    <form method="post">
+        <div class="form-group">
+            <label for="emailTxt" class="control-label col-md-2">Editar Email</label>
+            <div class="col-md-2">
+                <input id="emailTxt" type="text" class="form-control" name="emailTxt" placeholder="@Session["Email"]">
+            </div>
+            <div class="col-md-2">
+                <input type="submit" name="btnSubmitNombre" value="Editar" class="btn btn-success" />
+            </div>
+        </div>
+    </form>
+</div>

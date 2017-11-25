@@ -15,12 +15,12 @@
         <div class="container-fluid">
             <div class="row" id="logo"></div>
             <div class="row navi">
-                <div class="col-lg-9">
+                <div class="col-lg-10">
                     <div class="navbar-header">
                         <a class="navbar-brand headerleon" href="@Url.Action("Index","Home")"><h1>Farmacia León</h1></a>
                     </div>
                 </div>
-                <div class="input-group col-lg-3" id="buscar">
+                <div class="input-group" id="buscar">
                     <input type="text" class="form-control" placeholder="Search">
                     <div class="input-group-btn">
                         <button class="btn btn-default" type="submit">
@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div class="row navi">
-                <div class="col-lg-8">
+                <div class="col-lg-9">
                     <div class="nav navbar-nav" id="headernav">
                         <li><a href="@Url.Action("Nosotros","Misc")">Nosotros</a></li>
                         <li><a href="@Url.Action("Sucursales","Misc")">Sucursales</a></li>
@@ -53,15 +53,30 @@
                         </li>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-3">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="@Url.Action("Registro","Usuario")"><span class="glyphicon glyphicon-user"></span> Registrarse</a></li>
-                        <li><a href="@Url.Action("Login","Usuario")"><span class="glyphicon glyphicon-log-in"></span> Iniciar Sesión</a></li>
-                        <li><a href="@Url.Action("Index","Carrito")"><span class="glyphicon glyphicon-shopping-cart"></span> Carrito</a></li>
-                        @if ( Session["UsuarioID"] != null)
+                        @if (Session["UsuarioID"] == null)
                         {
-                            <li><a href="@Url.Action("Perfil","Usuario")"><span class="glyphicon glyphicon-cog"></span>Tu Perfil</a></li>
-                            <li>Bienvenido @Session["Nombre"].ToString()</li>
+                            <li><a href="@Url.Action("Registro","Usuario")"><span class="glyphicon glyphicon-user"></span> Registrarse</a></li>
+                            <li><a href="@Url.Action("Login","Usuario")"><span class="glyphicon glyphicon-log-in"></span> Iniciar Sesión</a></li>
+                        }
+                        <li><a href="@Url.Action("Index","Carrito")"><span class="glyphicon glyphicon-shopping-cart"></span> Carrito</a></li>
+                        @if (Session["UsuarioID"] != null)
+                        {
+                            <ul class="nav navbar-header">
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle headerleon" id="productos" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog"></span>
+                                        Tu Cuenta
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <a href="@Url.Action("Perfil","Usuario")"><span class="glyphicon glyphicon-cog"></span>Tu Perfil</a>
+                                    </ul>
+                                </li>
+                            </ul>
+                                
+                            
+                            
+       
                         }
                     </ul>
                 </div>

@@ -158,11 +158,11 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Context\ContextModel.cs" />
-    <Compile Include="Controllers\adminController.cs" />
     <Compile Include="Controllers\CarritoController.cs" />
     <Compile Include="Controllers\DireccionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MiscController.cs" />
+    <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -182,7 +182,12 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.2.1.min.map" />
-
+    <Content Include="Views\Usuario\Registro.cshtml" />
+    <Content Include="Views\Direccion\Direccion.cshtml" />
+    <Content Include="Views\Producto\AddProducto.cshtml" />
+    <Content Include="Views\Usuario\EditarNombre.cshtml" />
+    <Content Include="Views\Usuario\EditarEmail.cshtml" />
+    <Content Include="Views\Usuario\EditarPassword.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
