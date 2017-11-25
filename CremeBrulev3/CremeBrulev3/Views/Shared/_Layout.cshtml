@@ -61,6 +61,7 @@
                         @if ( Session["UsuarioID"] != null)
                         {
                             <li><a href="@Url.Action("Perfil","Usuario")"><span class="glyphicon glyphicon-cog"></span>Tu Perfil</a></li>
+                            <li>Bienvenido @Session["Nombre"].ToString()</li>
                         }
                     </ul>
                 </div>
