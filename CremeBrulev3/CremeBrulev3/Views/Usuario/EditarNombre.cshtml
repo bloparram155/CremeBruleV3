@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "EditarNombre";
+}
+
+<div class="container">
+    <h2>Aqui puedes editar tu nombre</h2>
+    <form method="post">
+        <div class="form-group">
+            <label for="nombreTxt" class="control-label col-md-2">Editar Nombre</label>
+            <div class="col-md-2">
+                <input id="nombreTxt" type="text" class="form-control" name="nombreTxt" placeholder="@Session["Nombre"]">
+            </div>
+            <div class="col-md-2">
+                <input type="submit" name="btnSubmitNombre" value="Editar" class="btn btn-success"/>
+            </div>
+        </div>
+    </form>
+</div>
+
+

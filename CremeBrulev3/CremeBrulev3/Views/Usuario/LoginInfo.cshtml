@@ -17,16 +17,9 @@
                 Editar Nombre
             </button>
             <div class="collapse" id="collapse1">
-                <div class="form-group">
-                    <label for="nombreTxt" class="control-label col-md-2">Editar Nombre</label>
-                    <div class="col-md-2">
-                        <input id="nombreTxt" type="text" class="form-control" name="nombreTxt" placeholder="@Session["Nombre"]" />
-                    </div>
-                    <div class="col-md-2">
-                        <input type="button" name="btnSubmitNombre" value="Editar" class="btn btn-success" />
-                    </div>
-                </div>
-
+               
+                   <a href="@Url.Action("EditarNombre","Usuario")" class="btn btn-success">Editar Nombre</a>
+               
             </div>
         </div>
         <div class="row">
@@ -34,15 +27,8 @@
                 Editar Email
             </button>
             <div class="collapse" id="collapse2">
-                <div class="form-group">
-                    <label for="nombreTxt" class="control-label col-md-2">Editar Email</label>
-                    <div class="col-md-2">
-                        <input id="nombreTxt" type="text" class="form-control" name="nombreTxt" placeholder="@Session["Email"]" />
-                    </div>
-                    <div class="col-md-2">
-                        <input type="button" name="btnSubmitEmail" value="Editar" class="btn btn-success" />
-                    </div>
-                </div>
+                
+                <a href="@Url.Action("EditarEmail","Usuario")" class="btn btn-success">Editar Email</a>
 
             </div>
         </div>
@@ -51,34 +37,29 @@
                 Editar Password
             </button>
             <div class="collapse" id="collapse3">
-                <div class="form-group">
-                    <label for="nombreTxt" class="control-label col-md-2">Editar Password</label>
-                    <div class="col-md-2">
-                        <input id="nombreTxt" type="text" class="form-control" name="nombreTxt" placeholder="@Session["Password"]" />
-                    </div>
-                    <div class="col-md-2">
-                        <input type="button" name="btnSubmitPassword" value="Editar" class="btn btn-success" />
-                    </div>
-                </div>
-
+                <a href="@Url.Action("EditarPassword","Usuario")" class="btn btn-success">Editar Password</a>
             </div>
         </div>
+        
         <div class="row">
             <button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapseExample">
                 Eliminar Cuenta
             </button>
-            <div class="collapse" id="collapse4">
-                <div class="form-group">
-                    <label for="nombreTxt" class="control-label col-md-2">Eliminar Cuenta</label>
-                    <div class="col-md-2">
-                        <input id="nombreTxt" type="text" class="form-control" name="nombreTxt" />
+            <form method="post">
+                <div class="collapse" id="collapse4">
+                    <div class="form-group">
+                        <label for="eliminarTxt" class="control-label col-md-2">Eliminar Cuenta</label>
+                        <div class="col-md-2">
+                            <input id="eliminarTxt" type="hidden" class="form-control" name="eliminarTxt" />
+                        </div>
+                        <div class="col-md-2">
+                            <input type="submit" name="btnSubmitEliminar" class="btn btn-danger" />
+                        </div>
                     </div>
-                    <div class="col-md-2">
-                        <input type="button" name="btnSubmitEliminar" value="Eliminar" class="btn btn-danger" />
-                    </div>
-                </div>
 
-            </div>
+                </div>
+            </form>
+            
         </div>
 
 
