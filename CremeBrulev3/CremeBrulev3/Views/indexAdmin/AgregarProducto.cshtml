@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "AgregarProducto";
+}
+
+<h2 class="titulos">Agregar Productos</h2>
+
+<div class="form-horizontal">
+    <h2></h2>
+    <div class="form-group">
+        <label for="nombreProductoTxt" class="control-label col-md-5">Nombre Producto</label>
+        <div class="col-md-7">
+            <input id="nombreProductoTxt" type="text" class="form-control" name="nombreProductoTxt" placeholder="Nombre" />
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="categoriaProductoTxt" class="control-label col-md-5">Categoria</label>
+        <div class="col-md-7">
+            <select class="form-control">
+                <option>Belleza</option>
+                <option>Salud</option>
+                <option>Deporte</option>
+                <option>Cuidado Personal</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="presentacionProductoTxt" class="control-label col-md-5">Presentación</label>
+        <div class="col-md-7">
+            <input id="presentacionProductoTxt" type="text" class="form-control" name="presentacionProductoTxt" placeholder="Pesentación" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="CantidadProductoTxt" class="control-label col-md-5">Cantidad</label>
+        <div class="col-md-7">
+            <input id="CantidadProductoTxt" type="number" class="form-control" name="CantidadProductoTxt" placeholder="Cantidad" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="PrecioProductoTxt" class="control-label col-md-5">Precio Unitario</label>
+        <div class="col-md-7">
+            <input id="PrecioProductoTxt" type="number" min="0.00" step="0.1" class="form-control" name="PrecioProductoTxt" placeholder="Precio" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="button" name="btnSubmit" value="Iniciar Sesión" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+

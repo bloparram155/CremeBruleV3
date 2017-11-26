@@ -131,6 +131,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\PublishProfiles\CremeBrulev - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -139,6 +140,7 @@
     <Content Include="Scripts\jquery-3.2.1.slim.js" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Content\SucursalesStyle.css" />
     <Content Include="Scripts\ValidarLogin.js" />
     <Content Include="Web.config" />
     <Content Include="Views\Usuario\Index.cshtml" />
@@ -161,6 +163,7 @@
     <Compile Include="Controllers\CarritoController.cs" />
     <Compile Include="Controllers\DireccionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\indexAdminController.cs" />
     <Compile Include="Controllers\MiscController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
@@ -189,6 +192,12 @@
     <Content Include="Views\Usuario\EditarEmail.cshtml" />
     <Content Include="Views\Usuario\EditarPassword.cshtml" />
     <Content Include="Views\Producto\Index.cshtml" />
+    <Content Include="Views\indexAdmin\Index.cshtml" />
+    <Content Include="Views\indexAdmin\Productos.cshtml" />
+    <Content Include="Views\indexAdmin\Clientes.cshtml" />
+    <Content Include="Views\indexAdmin\Ventas.cshtml" />
+    <Content Include="Views\indexAdmin\BuscaProductos.cshtml" />
+    <Content Include="Views\indexAdmin\AgregarProducto.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
