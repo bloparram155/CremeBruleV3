@@ -35,3 +35,20 @@
 .buttonTxt{
    color: #5ff442;
 }
+
+h2{
+   text-align: center;
+}
+
+.formulario {
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.bordes{
+    border: 1px solid gray;
+    padding: 10px;
+    background-color: rgba: (255, 255, 255, .5);
+}
