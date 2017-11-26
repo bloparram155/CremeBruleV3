@@ -1,4 +1,5 @@
-﻿using CremeBrulev3.Context;
+﻿using BussinessLogic;
+using CremeBrulev3.Context;
 using CremeBrulev3.Models;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace CremeBrulev3.Controllers
 {
     public class UsuarioController : Controller
     {
-        ContextModel context = new ContextModel();
+        UsuarioLogic userLogic = new UsuarioLogic();
         ServicioUsuario.ServiceUsuarioClient servu = new ServicioUsuario.ServiceUsuarioClient();
         // GET: Usuario
         public ActionResult Index()
@@ -23,6 +24,8 @@ namespace CremeBrulev3.Controllers
             return View();
         }
 
+
+
         public ActionResult Login()
         {
             return View();
@@ -33,14 +36,14 @@ namespace CremeBrulev3.Controllers
         {
             try
             {
-                Usuario user = context.Usuario.Single(x => x.Email == emailTxt && x.Password == passwordTxt );
-                if (user != null)
+                
+                if (userLogic.Login(emailTxt, passwordTxt) != null)
                 {
-                    Session["UsuarioID"] = user.UsuarioID.ToString();
-                    Session["Nombre"] = user.Nombre.ToString();
-                    Session["Email"] = user.Email.ToString();
-                    Session["Password"] = user.Password.ToString();
-                    Session["TipoUsuario"] = user.TipoUsuario.ToString();
+                    Session["UsuarioID"] = userLogic.Login(emailTxt, passwordTxt).UsuarioID.ToString();
+                    Session["Nombre"] = userLogic.Login(emailTxt, passwordTxt).Nombre.ToString();
+                    Session["Email"] = userLogic.Login(emailTxt, passwordTxt).Email.ToString();
+                    Session["Password"] = userLogic.Login(emailTxt, passwordTxt).Password.ToString();
+                    Session["TipoUsuario"] = userLogic.Login(emailTxt, passwordTxt).TipoUsuario.ToString();
                     return RedirectToAction("Index");
 
                 }
@@ -67,10 +70,26 @@ namespace CremeBrulev3.Controllers
             return View();
         }
 
-       
-        //Controlador para Editar al usuario
-  
 
+        [HttpPost]
+        public ActionResult LoginInfo(int eliminarTxt)
+        {
+            try
+            {
+
+                /*Usuario user = new Usuario();
+                user.UsuarioID = eliminarTxt;
+                context.Entry(user).State = EntityState.Deleted;
+                context.SaveChanges();*/
+            }
+            catch (Exception)
+            {
+
+            }
+            return View();
+        }
+
+        //Controlador para Editar al usuario
         public ActionResult EditarNombre()
         {
             if (Session["UsuarioID"] == null)
@@ -85,15 +104,13 @@ namespace CremeBrulev3.Controllers
         {
             try
             {
-                Usuario user = new Usuario();
-                user.UsuarioID = Int32.Parse(Session["UsuarioID"].ToString());
-                user.Nombre = nombreTxt;
-                user.Email = Session["Email"].ToString();
-                user.Password = Session["Password"].ToString();
-                user.TipoUsuario = Session["TipoUsuario"].ToString();
-                context.Entry(user).State = EntityState.Modified;
-                context.SaveChanges();
-                ViewBag.Message("Nombre usuario"+user.Nombre+"Editado.");
+
+                string email = Session["Email"].ToString();
+                string password = Session["Password"].ToString();
+                int id = Int32.Parse(Session["UsuarioID"].ToString());
+                userLogic.EditarNombre(id, nombreTxt,email,password);
+                
+               
             }catch(Exception e)
             {
 
@@ -116,19 +133,20 @@ namespace CremeBrulev3.Controllers
         {
             try
             {
-                Usuario user = new Usuario();
-                user.UsuarioID = Int32.Parse(Session["UsuarioID"].ToString());
-                user.Nombre = Session["Nombre"].ToString();
-                user.Email = emailTxt;
-                user.Password = Session["Password"].ToString();
-                user.TipoUsuario = Session["TipoUsuario"].ToString();
-                context.Entry(user).State = EntityState.Modified;
-                context.SaveChanges();
-                return RedirectToAction("Perfil");
+                
+                int id = Int32.Parse(Session["UsuarioID"].ToString());
+                string nombre = Session["Nombre"].ToString();   
+                string password = Session["Password"].ToString();
+                bool status = userLogic.EditarEmail(id,nombre,emailTxt,password);
+                if(status == false)
+                {
+                    return RedirectToAction("Perfil");
+                }
             }catch(Exception e)
             {
 
             }
+
             return View();
            
         }
@@ -148,15 +166,11 @@ namespace CremeBrulev3.Controllers
         {
             try
             {
-                Usuario user = new Usuario();
-                user.UsuarioID = Int32.Parse(Session["UsuarioID"].ToString());
-                user.Nombre = Session["Nombre"].ToString();
-                user.Email = Session["Email"].ToString();
-                user.Password = passwordTxt;
-                user.TipoUsuario = Session["TipoUsuario"].ToString();
-                context.Entry(user).State = EntityState.Modified;
-                context.SaveChanges();
-                return RedirectToAction("Perfil");
+                int id = Int32.Parse(Session["UsuarioID"].ToString());
+                string nombre = Session["Nombre"].ToString();
+                string email = Session["Email"].ToString();
+                bool status = userLogic.EditarPassword(id, nombre, email, passwordTxt);
+               
             }
             catch (Exception e)
             {
@@ -180,12 +194,7 @@ namespace CremeBrulev3.Controllers
         {
             try
             {
-                Usuario user = new Usuario();
-                user.Nombre = nombreTxt;
-                user.Email = emailTxt;
-                user.Password = passwordTxt;
-                context.Usuario.Add(user);
-                context.SaveChanges();
+                bool status = userLogic.RegistrarUsuario(nombreTxt, emailTxt, passwordTxt);
             }
             catch (Exception e)
             {
@@ -209,31 +218,9 @@ namespace CremeBrulev3.Controllers
         }
 
 
-        public ActionResult Eliminar()
-        {
-            if (Session["UsuarioID"] == null)
-            {
-                return Redirect("/Usuario/Login");
-            }
-            return View();
-        }
 
-        [HttpPost]
-        public ActionResult LoginInfo(int eliminarTxt)
-        {
-            try { 
-               
-                Usuario user = new Usuario();
-                user.UsuarioID = eliminarTxt;
-                context.Entry(user).State = EntityState.Deleted;
-                context.SaveChanges();
-            }
-            catch (Exception)
-            {
 
-            }
-            return View();
-        }
+        
 
     }
 }

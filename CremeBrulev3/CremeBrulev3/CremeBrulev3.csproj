@@ -143,7 +143,6 @@
     <Content Include="Web.config" />
     <Content Include="Views\Usuario\Index.cshtml" />
     <Content Include="Views\Usuario\Login.cshtml" />
-    <Content Include="Views\Usuario\Eliminar.cshtml" />
     <Content Include="Views\Usuario\LoginInfo.cshtml" />
     <Content Include="Views\Carrito\Index.cshtml" />
     <Content Include="Views\Usuario\Perfil.cshtml" />
@@ -206,6 +205,16 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\ServicioUsuario\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BussinessLogic\BussinessLogic.csproj">
+      <Project>{a0142e1d-a211-495b-b4fe-160766cc7b66}</Project>
+      <Name>BussinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <Project>{488d1c48-e199-4aca-bcef-4142a4ceb86f}</Project>
+      <Name>DataAccessLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
