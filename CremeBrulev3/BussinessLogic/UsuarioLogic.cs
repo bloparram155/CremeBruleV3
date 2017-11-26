@@ -67,13 +67,5 @@ namespace BussinessLogic
             bool status = dal.RegistrarUsuario(user);
             return status;
         }
-
-        public bool EliminarUsuario(int id)
-        {
-            Usuario user = new Usuario();
-            user.UsuarioID = id;
-            bool status = dal.EliminarUsuario(user);
-            return status;
-        }
     }
 }

@@ -45,10 +45,20 @@
             <button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapseExample">
                 Eliminar Cuenta
             </button>
-            <div class="collapse" id="collapse4">
-                <a href="@Url.Action("EliminarUsuario","Usuario")" class="btn btn-danger">Eliminar Usuario</a>
-            </div>
-           
+            <form method="post">
+                <div class="collapse" id="collapse4">
+                    <div class="form-group">
+                        <label for="eliminarTxt" class="control-label col-md-2">Eliminar Cuenta</label>
+                        <div class="col-md-2">
+                            <input id="eliminarTxt" type="hidden" class="form-control" name="eliminarTxt" />
+                        </div>
+                        <div class="col-md-2">
+                            <input type="submit" name="btnSubmitEliminar" class="btn btn-danger" />
+                        </div>
+                    </div>
+
+                </div>
+            </form>
             
         </div>
 

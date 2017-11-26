@@ -196,7 +196,6 @@
     <Content Include="Views\indexAdmin\Productos.cshtml" />
     <Content Include="Views\indexAdmin\Clientes.cshtml" />
     <Content Include="Views\indexAdmin\Ventas.cshtml" />
-    <Content Include="Views\Usuario\EliminarUsuario.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
