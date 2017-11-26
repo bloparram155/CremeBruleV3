@@ -139,6 +139,7 @@
     <Content Include="Scripts\jquery-3.2.1.slim.js" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\SucursalesStyle.css" />
     <Content Include="Scripts\ValidarLogin.js" />
     <Content Include="Web.config" />
     <Content Include="Views\Usuario\Index.cshtml" />

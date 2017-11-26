@@ -1,0 +1,19 @@
+﻿.container {
+    text-align: center;
+}
+
+.col-md-4 {
+    text-align: center;
+}
+
+#titulo {
+    font-size: 3.5em;
+}
+
+#subtitulo {
+    font-size: 1.5em;
+}
+
+.separador {
+    margin: 60px;
+}
