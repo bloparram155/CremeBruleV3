@@ -41,7 +41,7 @@ h2{
    text-align: center;
 }
 
-.formulario {
+.formulario{
     text-align: center;
     align-content: center;
     align-items: center;
@@ -49,14 +49,13 @@ h2{
 }
 
 .bordes{
-    border: 1px solid gray;
+    border: 1px solid grey;
     padding: 10px;
     
 }
 
 .asideadmin{
     
-    color: white;
     height:300px;
     border-right: 1px solid #222;
 }
