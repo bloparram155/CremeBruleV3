@@ -6,12 +6,29 @@ using System.Web.Mvc;
 
 namespace CremeBrulev3.Controllers
 {
-    public class IndexAdminController : Controller
+    public class indexAdminController : Controller
     {
-        // GET: IndexAdmin
+        // GET: indexAdmin
         public ActionResult Index()
         {
             return View();
         }
+
+        public ActionResult Productos()
+        {
+            return View();
+        }
+
+        public ActionResult Clientes()
+        {
+            return View();
+        }
+
+        public ActionResult Ventas()
+        {
+            return View();
+        }
+
+
     }
 }

@@ -15,5 +15,11 @@
 }
 
 .separador {
-    margin: 60px;
+    height: 30px;
+}
+
+.titulos {
+    margin: 10px 0;
+    border-bottom: 3px solid rgba(2, 2, 2, 0.2);
+    padding: 12px;
 }
