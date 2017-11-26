@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+    <div class="col-lg-2 asideadmin">
+        <div class="spacio"></div>
+        <ul class="lista">
+            <li><h3><a href="@Url.Action("productos","admin")">Productos</a></h3></li>
+            <li><h3><a href="@Url.Action("clientes","admin")">Clientes</a></h3></li>
+            <li><h3><a href="@Url.Action("ventas","admin")">Ventas</a></h3></li>
+        </ul>
+    </div>
+    <div class="row text-center col-lg-10">
+        <div class="col-lg-4">
+            <h2><a href="@Url.Action("productos","admin")">Productos</a></h2>
+        </div>
+        <div class="col-lg-4">
+            <h2><a href="@Url.Action("clientes","admin")">Clientes</a></h2>
+        </div>
+        <div class="col-lg-4">
+            <h2><a href="@Url.Action("ventas","admin")">Ventas</a></h2>
+        </div>
+    </div>
+
