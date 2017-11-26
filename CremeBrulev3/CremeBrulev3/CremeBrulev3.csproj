@@ -130,6 +130,8 @@
     <None Include="Connected Services\ServicioUsuario\ServiceUsuario2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Properties\PublishProfiles\CremeBrulev - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -138,14 +140,13 @@
     <Content Include="Scripts\jquery-3.2.1.slim.js" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\SucursalesStyle.css" />
     <Content Include="Scripts\ValidarLogin.js" />
     <Content Include="Web.config" />
     <Content Include="Views\Usuario\Index.cshtml" />
     <Content Include="Views\Usuario\Login.cshtml" />
     <Content Include="Views\Usuario\Eliminar.cshtml" />
     <Content Include="Views\Usuario\LoginInfo.cshtml" />
-    <Content Include="Views\Usuario\Direcciones.cshtml" />
-    <Content Include="Views\Usuario\Registro.cshtml" />
     <Content Include="Views\Carrito\Index.cshtml" />
     <Content Include="Views\Usuario\Perfil.cshtml" />
     <Content Include="Views\Misc\Nosotros.cshtml" />
@@ -160,10 +161,11 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Context\ContextModel.cs" />
-    <Compile Include="Controllers\adminController.cs" />
     <Compile Include="Controllers\CarritoController.cs" />
+    <Compile Include="Controllers\DireccionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MiscController.cs" />
+    <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -183,10 +185,13 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.2.1.min.map" />
-    <Content Include="Views\admin\Index.cshtml" />
-    <Content Include="Views\admin\productos.cshtml" />
-    <Content Include="Views\admin\clientes.cshtml" />
-    <Content Include="Views\admin\ventas.cshtml" />
+    <Content Include="Views\Usuario\Registro.cshtml" />
+    <Content Include="Views\Direccion\Direccion.cshtml" />
+    <Content Include="Views\Producto\AddProducto.cshtml" />
+    <Content Include="Views\Usuario\EditarNombre.cshtml" />
+    <Content Include="Views\Usuario\EditarEmail.cshtml" />
+    <Content Include="Views\Usuario\EditarPassword.cshtml" />
+    <Content Include="Views\Producto\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
