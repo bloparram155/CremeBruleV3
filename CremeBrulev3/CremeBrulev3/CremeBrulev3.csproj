@@ -140,7 +140,7 @@
     <Content Include="Scripts\jquery-3.2.1.slim.js" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\SucursalesStyle.css" />
+    <Content Include="Content\SucursalesStyle.css" />
     <Content Include="Scripts\ValidarLogin.js" />
     <Content Include="Web.config" />
     <Content Include="Views\Usuario\Index.cshtml" />
@@ -164,7 +164,7 @@
     <Compile Include="Controllers\CarritoController.cs" />
     <Compile Include="Controllers\DireccionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\IndexAdminController.cs" />
+    <Compile Include="Controllers\indexAdminController.cs" />
     <Compile Include="Controllers\MiscController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
@@ -193,6 +193,10 @@
     <Content Include="Views\Usuario\EditarEmail.cshtml" />
     <Content Include="Views\Usuario\EditarPassword.cshtml" />
     <Content Include="Views\Producto\Index.cshtml" />
+    <Content Include="Views\indexAdmin\Index.cshtml" />
+    <Content Include="Views\indexAdmin\Productos.cshtml" />
+    <Content Include="Views\indexAdmin\Clientes.cshtml" />
+    <Content Include="Views\indexAdmin\Ventas.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -203,7 +207,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="images\" />
-    <Folder Include="Views\IndexAdmin\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
