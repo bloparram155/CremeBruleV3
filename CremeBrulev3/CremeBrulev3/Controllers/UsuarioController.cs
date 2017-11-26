@@ -217,7 +217,14 @@ namespace CremeBrulev3.Controllers
             return View();
         }
 
-
+        public ActionResult EliminarUsuario()
+        {
+            if (Session["UsuarioID"] == null)
+            {
+                return Redirect("/Usuario/Login");
+            }
+            return View();
+        }
 
 
         

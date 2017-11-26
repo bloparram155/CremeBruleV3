@@ -62,5 +62,10 @@ namespace DataAccessLayer.Entities
             model.SaveChanges();
             return status;
         }
+
+        public bool EliminarUsuario(Usuario user)
+        {
+
+        }
     }
 }
