@@ -1,66 +1,41 @@
 ﻿
 @{
-    Layout = null;
+    ViewBag.Title = "Registro";
 }
 
-<!DOCTYPE html>
+<div class="form-horizontal bordes">
+    <h2>Registro</h2>
+    <div class="form-group">
+        <label for="nombreTxt" class="control-label col-md-5">Nombre</label>
+        <div class="col-md-7">
+            <input id="nombreTxt" type="text" class="form-control" name="nombreTxt" placeholder="Nombre" />
 
-<html>
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width" />
-    <title>Registro</title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/styles.css" rel="stylesheet" type="text/css" />
-    <script src="~/Scripts/modernizr-2.6.2.js"></script>
-</head>
-<body>
-
-    <div class="container body-content">
-
-
-        <form method="post">
-            <div class="form-horizontal">
-                <h2>Registro</h2>
-                <div class="form-group">
-                    <label for="nombreTxt" class="control-label col-md-2">Nombre</label>
-                    <div class="col-md-10">
-                        <input id="nombreTxt" type="text" class="form-control" name="nombreTxt" placeholder="Nombre" />
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="emailTxt" class="control-label col-md-2">Email</label>
-                    <div class="col-md-10">
-                        <input id="emailTxt" type="text" class="form-control" name="emailTxt" placeholder="Email" />
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="passwordTxt" class="control-label col-md-2">Password</label>
-                    <div class="col-md-10">
-                        <input id="passwordTxt" type="password" class="form-control" name="passwordTxt" placeholder="Password" />
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="rePasswordTxt" class="control-label col-md-2">Re-Password</label>
-                    <div class="col-md-10">
-                        <input id="rePasswordTxt" type="password" class="form-control" name="rePasswordTxt" placeholder="Re-Password" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" name="btnSubmit" value="Registrarse" class="btn btn-default" />
-                    </div>
-                </div>
-            </div>
-        </form>
-
+        </div>
     </div>
 
-    <script src="~/Scripts/jquery-3.2.1.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
-</body>
-</html>
+    <div class="form-group">
+        <label for="emailTxt" class="control-label col-md-5">Email</label>
+        <div class="col-md-7">
+            <input id="emailTxt" type="text" class="form-control" name="emailTxt" placeholder="Email" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="passwordTxt" class="control-label col-md-5">Password</label>
+        <div class="col-md-7">
+            <input id="passwordTxt" type="text" class="form-control" name="paswordTxt" placeholder="Password" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="rePasswordTxt" class="control-label col-md-5">Re-password</label>
+        <div class="col-md-7">
+            <input id="rePasswordTxt" type="text" class="form-control" name="rePasswordTxt" placeholder="Re-Password" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-7"></div>
+        <div class="col-md-5">
+            <input type="button" name="btnSubmit" value="Iniciar Sesión" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+
