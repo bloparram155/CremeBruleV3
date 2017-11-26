@@ -29,6 +29,14 @@ namespace CremeBrulev3.Controllers
             return View();
         }
 
+        public ActionResult BuscaProductos()
+        {
+            return View();
+        }
 
+        public ActionResult AgregarProducto()
+        {
+            return View();
+        }
     }
 }

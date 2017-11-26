@@ -5,12 +5,25 @@
 
 <h2 class="titulos">Productos</h2>
 
-
-<div class="form-group ">
-    <div class="text-center">
-        <h2>Busqueda de Productos por Nombre</h2>
-        <input class="input-lg" type="text"  name="emailTxt" placeholder="Producto" />
-        <input class="btn-lg" type="submit" name="buscaProducto" value="buscar" />
+<div class="row">
+    <div class="col-md-6">
+        <div class="thumbnail">
+            <a href="@Url.Action("BuscaProductos","indexAdmin")">
+                <div class="caption">
+                    <h2>Ver productos</h2>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="thumbnail">
+            <a href="@Url.Action("AgregarProducto","indexAdmin")">
+                <div class="caption">
+                    <h2>Agregar Productos</h2>
+                </div>
+            </a>
+        </div>
     </div>
 </div>
+
 
