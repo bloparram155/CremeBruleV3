@@ -196,6 +196,8 @@
     <Content Include="Views\indexAdmin\Productos.cshtml" />
     <Content Include="Views\indexAdmin\Clientes.cshtml" />
     <Content Include="Views\indexAdmin\Ventas.cshtml" />
+    <Content Include="Views\indexAdmin\BuscaProductos.cshtml" />
+    <Content Include="Views\indexAdmin\AgregarProducto.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
