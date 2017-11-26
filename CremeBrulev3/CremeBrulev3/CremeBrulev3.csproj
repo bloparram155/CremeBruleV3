@@ -130,6 +130,7 @@
     <None Include="Connected Services\ServicioUsuario\ServiceUsuario2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Properties\PublishProfiles\CremeBrulev - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -188,6 +189,7 @@
     <Content Include="Views\Usuario\EditarNombre.cshtml" />
     <Content Include="Views\Usuario\EditarEmail.cshtml" />
     <Content Include="Views\Usuario\EditarPassword.cshtml" />
+    <Content Include="Views\Producto\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
