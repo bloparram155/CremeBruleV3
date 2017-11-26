@@ -35,3 +35,13 @@
 .buttonTxt{
    color: #5ff442;
 }
+
+.asideRight {
+    background: #5ff442;
+    height: 100px;
+}
+
+.itemsContainer {
+   background: #4286f4;
+    width: 100px;
+}
