@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "EliminarUsuario";
+}
+
+<div class="row">
+    <h2>Aqui puedes eliminar tu cuenta, ten encuenta que una ves eliminada no se puede recuperar.</h2>
+    <h3>Para eliminar tu cuenta debes ingresar tu email en la siguiente caja de texto.</h3>
+    <form method="post">
+        <div class="form-group">
+            <label for="mensajeConfirmacionTxt" class="control-label col-md-2">Editar Nombre</label>
+            <div class="col-md-2">
+                <input id="mensajeConfirmacionTxt" type="text" class="form-control" name="mensajeConfirmacionTxt" placeholder="Aqui va tu email">
+            </div>
+            <div class="col-md-2">
+                <input type="submit" name="btnSubmitConfirmacion" value="Eliminar" class="btn btn-danger" />
+            </div>
+        </div>
+    </form>
+</div>
+
