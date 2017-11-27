@@ -226,6 +226,25 @@ namespace CremeBrulev3.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult EliminarUsuario(String mensajeConfirmacionTxt)
+        {
+            try
+            {
+                if(mensajeConfirmacionTxt == Session["Email"].ToString())
+                {
+                    int id = Int32.Parse(Session["UsuarioID"].ToString());
+                    userLogic.EliminarUsuario(id);
+                    Session.RemoveAll();
+                    return Redirect("/Home/Index");
+                }
+            }catch(Exception e)
+            {
+
+            }
+
+            return View();
+        }
 
         
 

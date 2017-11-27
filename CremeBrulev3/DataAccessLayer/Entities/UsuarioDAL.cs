@@ -65,6 +65,11 @@ namespace DataAccessLayer.Entities
 
         public bool EliminarUsuario(Usuario user)
         {
+            bool status = false;
+            model.Entry(user).State = EntityState.Deleted;
+            model.SaveChanges();
+            status = true;
+            return status;
 
         }
     }

@@ -198,6 +198,7 @@
     <Content Include="Views\indexAdmin\Ventas.cshtml" />
     <Content Include="Views\indexAdmin\BuscaProductos.cshtml" />
     <Content Include="Views\indexAdmin\AgregarProducto.cshtml" />
+    <Content Include="Views\Usuario\EliminarUsuario.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
