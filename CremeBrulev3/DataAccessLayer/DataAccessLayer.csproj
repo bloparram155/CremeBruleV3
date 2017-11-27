@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\AdminDAL.cs" />
+    <Compile Include="Entities\ProductoDAL.cs" />
     <Compile Include="Entities\UsuarioDAL.cs" />
     <Compile Include="Models\Carrito.cs" />
     <Compile Include="Models\ContextModel.cs" />

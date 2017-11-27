@@ -44,7 +44,15 @@ namespace CremeBrulev3.Controllers
                     Session["Email"] = userLogic.Login(emailTxt, passwordTxt).Email.ToString();
                     Session["Password"] = userLogic.Login(emailTxt, passwordTxt).Password.ToString();
                     Session["TipoUsuario"] = userLogic.Login(emailTxt, passwordTxt).TipoUsuario.ToString();
-                    return RedirectToAction("Index");
+                    if(Session["TipoUsuario"].ToString() == "ADMIN")
+                    {
+                        return Redirect("/indexAdmin/Index/");
+                    }
+                    else
+                    {
+                        return RedirectToAction("Index");
+                    }
+                    
 
                 }
                 else

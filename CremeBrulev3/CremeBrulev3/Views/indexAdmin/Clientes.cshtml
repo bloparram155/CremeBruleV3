@@ -1,15 +1,59 @@
-﻿
+﻿@model IEnumerable<DataAccessLayer.Models.Usuario>
 @{
     ViewBag.Title = "Clientes";
 }
 
 <h2 class="titulos">Clientes</h2>
 
-<div class="form-group">
-    <div class="text-center">
-        <h2>Busqueda de Clientes por Nombre</h2>
-        <input class="input-lg" type="text" name="buscaCliente" placeholder="Nombre"/>
-        <input class="btn-lg" type="submit" name="btnBuscaCliente" value="buscar" />
+<form method="post">
+    <div class="form-group">
+        <div class="text-center">
+            <h2>Busqueda de Clientes por Nombre</h2>
+            <input id="buscarClientes" class="input-lg" type="text" name="buscarClientes" placeholder="Nombre" />
+            <input class="btn-lg btn-success" type="submit" name="btnBuscarCliente" value="Buscar" />
+        </div>
     </div>
+</form>
+    
+
+<div class="row">
+    <table class="table table-hover table-bordered table-responsive" id="tablaClientes">
+        <thead>
+            <tr>
+                <th>UsuarioID</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>TipoUsuario</th>
+                <th>CuentaVerificada</th>
+            </tr>
+        </thead>
+        <tfoot>
+        </tfoot>
+        @foreach (var item in Model)
+         {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UsuarioID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TipoUsuario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CuentaVerificada)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.UsuarioID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.UsuarioID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.UsuarioID })
+                </td>
+            </tr>
+         }
+    </table>
 </div>
 
