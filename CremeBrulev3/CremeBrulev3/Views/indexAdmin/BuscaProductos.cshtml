@@ -1,18 +1,57 @@
-﻿
+﻿@model IEnumerable<DataAccessLayer.Models.Producto>
 @{
     ViewBag.Title = "BuscaProductos";
 }
 
-<div class="row">
-    <div class="col-lg-1"><a onclick="history.back()"><h3>Regresar</h3></a></div>
-    
-</div>
 
-<div class="form-group ">
-    <div class="text-center">
-        <h2>Busqueda de Productos por Nombre</h2>
-        <input class="input-lg" type="text" name="buscaProducto" placeholder="Producto" />
-        <input class="btn-lg" type="submit" name="btnBuscaProducto" value="buscar" />
     </div>
-</div>
+</form>
+    
+<div class="row">
+        <table class="table" id="tablaProductos">
+            <thead>
+                <tr>
+                    <th>ProductoID</th>
+                    <th>Nombre</th>
+                    <th>Categoria</th>
+                    <th>Presentacion</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tfoot>
+            </tfoot>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductoID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Categoria)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Presentacion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cantidad)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Precio)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ProductoID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.ProductoID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ProductoID })
+                    </td>
+                </tr>
+            }
+        </table>
+</div> 
 
+    
+
+    
