@@ -1,33 +1,37 @@
 ﻿
 @{
-    Layout = null;
+    ViewBag.Title = "Login";
 }
 
+<div class="row">
+    <div class="col-lg-1"><a onclick="history.back()"><h3>Regresar</h3></a></div>
+</div>
+
 <div class="form-horizontal">
-    <h2>Registro</h2>
+    <h2 class="titulos">Registro</h2>
     <div class="form-group">
-        <label for="nombreTxt" class="control-label col-md-2">Nombre</label>
-        <div class="col-md-10">
+        <label for="nombreTxt" class="control-label col-md-4">Nombre</label>
+        <div class="col-md-8">
             <input id="nombreTxt" type="text" class="form-control" name="nombreTxt" placeholder="Nombre" />
 
         </div>
     </div>
 
     <div class="form-group">
-        <label for="emailTxt" class="control-label col-md-2">Email</label>
-        <div class="col-md-10">
+        <label for="emailTxt" class="control-label col-md-4">Email</label>
+        <div class="col-md-8">
             <input id="emailTxt" type="text" class="form-control" name="emailTxt" placeholder="Email" />
         </div>
     </div>
     <div class="form-group">
-        <label for="passwordTxt" class="control-label col-md-2">Password</label>
-        <div class="col-md-10">
+        <label for="passwordTxt" class="control-label col-md-4">Password</label>
+        <div class="col-md-8">
             <input id="passwordTxt" type="text" class="form-control" name="paswordTxt" placeholder="Password" />
         </div>
     </div>
     <div class="form-group">
-        <label for="rePasswordTxt" class="control-label col-md-2">Email</label>
-        <div class="col-md-10">
+        <label for="rePasswordTxt" class="control-label col-md-4">Email</label>
+        <div class="col-md-8">
             <input id="rePasswordTxt" type="text" class="form-control" name="rePasswordTxt" placeholder="Re-Password" />
         </div>
     </div>
