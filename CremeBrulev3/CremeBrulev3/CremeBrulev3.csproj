@@ -133,6 +133,20 @@
     <None Include="Properties\PublishProfiles\CremeBrulev - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
+    <Content Include="images\BuenFin.jpg" />
+    <Content Include="images\doctoraFL.png" />
+    <Content Include="images\DrLeon.jpg" />
+    <Content Include="images\empleadaFL.jpg" />
+    <Content Include="images\empleadoFL.jpg" />
+    <Content Include="images\familaFL.jpg" />
+    <Content Include="images\farmaceuticosFL.jpg" />
+    <Content Include="images\FarmaciaLeon.jpg" />
+    <Content Include="images\MedicinalFL.jpg" />
+    <Content Include="images\mujer-con-hoja-y-aceite-facial-natural.jpg" />
+    <Content Include="images\naturalesFL.jpg" />
+    <Content Include="images\navidad.jpg" />
+    <Content Include="images\precios.jpg" />
+    <Content Include="images\YaTieneEnQuienConfiarFL.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
@@ -208,7 +222,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="images\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
