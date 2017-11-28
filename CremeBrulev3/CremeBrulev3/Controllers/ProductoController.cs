@@ -1,4 +1,5 @@
-﻿using CremeBrulev3.Context;
+﻿using BussinessLogic;
+using CremeBrulev3.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,12 +10,12 @@ namespace CremeBrulev3.Controllers
 {
     public class ProductoController : Controller
     {
-        ContextModel context = new ContextModel();
 
+        ProductoLogic prodLogic = new ProductoLogic();
         // GET: Producto
         public ActionResult Index()
         {
-            return View();
+            return View(prodLogic.listProducto());
         }
 
        

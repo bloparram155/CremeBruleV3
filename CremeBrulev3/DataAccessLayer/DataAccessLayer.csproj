@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\AdminDAL.cs" />
+    <Compile Include="Entities\CarritoDAL.cs" />
     <Compile Include="Entities\ProductoDAL.cs" />
     <Compile Include="Entities\UsuarioDAL.cs" />
     <Compile Include="Models\Carrito.cs" />

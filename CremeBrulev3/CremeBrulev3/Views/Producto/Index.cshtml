@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<DataAccessLayer.Models.Producto>
 @{
     Layout = null;
 }
@@ -87,30 +87,63 @@
                     </ul>
                 </div>
             </div>
-            <!--<div class="row">
-                <div class="col-lg-6">
-
-
-                </div>
-                <div class="col-lg-6">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>Carrito</a></li>
-                    </ul>
-                </div>
-            </div>-->
         </div>
     </header>
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xs-2" id="asideRight">
+            <div class="col-xs-2 asideadmin">
                 <ul class="form-group">
 
                 </ul>
             </div>
-            <div class="col-xs-10" id="itemsContainer">
-                container
+            <div class="col-sm-10">
+                <table class="table table-bordered table-responsive table-hover" id="tablaProductos">
+                    <thead>
+                        <tr>
+                            <th>ProductoID</th>
+                            <th>Nombre</th>
+                            <th>Categoria</th>
+                            <th>Presentacion</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                            <th>Opciones</th>
+                        </tr>
+                    </thead>
+                    
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ProductoID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Nombre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Categoria)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Presentacion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Cantidad)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Precio)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Agregar al carrito","AddCarrito","Carrito", new { ProductoID = item.ProductoID, Cantidad = 1},null);
+                                
+               
+                            </td>
+                        </tr>
+                    }
+                    <tfoot>
+                    </tfoot>
+                </table>
             </div>
+            
         </div>
 
         <hr />

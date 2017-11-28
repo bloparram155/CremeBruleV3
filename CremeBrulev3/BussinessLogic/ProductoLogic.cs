@@ -25,5 +25,15 @@ namespace BussinessLogic
             return lista;
         }
 
+        public Producto BusquedaProductoSolo(int id)
+        {
+            var producto = dal.BuscarProductoSolo(id);
+            return producto;
+        }
+
+       /* public List<Producto> ActualizarCantidades(int cantidad)
+        {
+
+        }*/
     }
 }

@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using DataAccessLayer.Models;
 using DataAccessLayer.Entities;
+using System.Net;
+using System.Net.Mail;
 namespace BussinessLogic
 {
     public class UsuarioLogic
@@ -76,5 +78,32 @@ namespace BussinessLogic
             bool status = dal.EliminarUsuario(user);
             return status;
         }
+
+        /*public bool EnviarCorreoVerificacion(string Emailto)
+        {
+            
+            MailMessage msj = new MailMessage();
+            SmtpClient smtp = new SmtpClient();
+            try
+            {
+
+                msj.From = new MailAddress("rl.navarrete78923@gmail.com");
+                msj.To.Add(new MailAddress(Emailto));
+                msj.Body = "Test Mensaje";
+                smtp.Host = "smtp.gmail.com";
+                smtp.Port = 25;
+                smtp.Credentials = new NetworkCredential("rl.navarrete78923@gmail.com", "star45rf1234");
+                smtp.EnableSsl = true;
+                smtp.Send(msj);
+                
+                return true;
+            }catch(Exception e)
+            {
+                return false;
+            }
+           
+
+        }*/
+
     }
 }
