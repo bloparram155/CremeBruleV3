@@ -15,15 +15,14 @@ namespace DataAccessLayer.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int OrdenID { get; set; }
-        [ForeignKey("usuario")]
         public int UsuarioID { get; set; }
-        [ForeignKey("carrito")]
         public int CarritoID { get; set; }
         public DateTime FechaOrden { get; set; }
 
         //navprops  
-        
+        [ForeignKey("UsuarioID")]
         public Usuario usuario { get; set; }
+        [ForeignKey("CarritoID")]
         public Carrito carrito { get; set; }
 
     }

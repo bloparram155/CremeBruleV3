@@ -25,7 +25,7 @@ namespace CremeBrulev3.Controllers
             }
 
             Carrito carrito = Session["Carrito"] as Carrito;
-           
+
             return View(carrito.productoLista);
         }
 
@@ -34,11 +34,11 @@ namespace CremeBrulev3.Controllers
            Carrito carrito = SessionStateAttribute[]
         }
         */
-       
-        public ActionResult AddCarrito(int ProductoID,int cantidad)
+
+        public ActionResult AddCarrito(int ProductoID, int cantidad)
         {
             Carrito carrito = Session["Carrito"] as Carrito;
-            if(carrito == null || Session["Carrito"] == null)
+            if (carrito == null || Session["Carrito"] == null)
             {
                 carrito = new Carrito();
                 Session["Carrito"] = carrito;
@@ -54,7 +54,7 @@ namespace CremeBrulev3.Controllers
         }
 
         /*[HttpPost]
-        public ActionResult ActualizarCantidadesint cantidadTxt)
+        public ActionResult ActualizarCantidadItemCarrito(int cantidadTxt)
         {
             Carrito carrito = Session["Carrito"] as Carrito;
             if (carrito == null || Session["Carrito"] == null)
@@ -62,12 +62,24 @@ namespace CremeBrulev3.Controllers
                 carrito = new Carrito();
                 Session["Carrito"] = carrito;
             }
-             foreach(var item in carrito.productoLista)
-            {
 
-            }
+            foreach (var item in carrito.productoLista) {
+                Producto producto = item;
+                producto.Cantidad = cantidadTxt;
+                        }
 
+            return RedirectToAction("Micarrito");
         }*/
-
+      
+       public ActionResult RealizarCompra()
+        {
+            Carrito carrito = Session["Carrito"] as Carrito;
+            Session["CarritoID"] = carrito.CarritoID;
+            int cartID = Int32.Parse(Session["CarritoID"].ToString());
+            int userID = Int32.Parse(Session["UsuarioID"].ToString());
+            bool status = cartLogic.RealizarCompra(carrito,userID,cartID);
+            return Redirect("/Home/Index/");
+            
+        }
     }
 }
