@@ -7,40 +7,43 @@
     <div class="col-lg-1"><a onclick="history.back()"><h3>Regresar</h3></a></div>
 </div>
 
-<div class="form-horizontal">
-    <h2 class="titulos">Registro</h2>
-    <div class="form-group">
-        <label for="nombreTxt" class="control-label col-md-4">Nombre</label>
-        <div class="col-md-8">
-            <input id="nombreTxt" type="text" class="form-control" name="nombreTxt" placeholder="Nombre" />
+<form method="post">
+    <div class="form-horizontal">
+        <h2 class="titulos">Registro</h2>
+        <div class="form-group">
+            <label for="nombreTxt" class="control-label col-md-4">Nombre</label>
+            <div class="col-md-8">
+                <input id="nombreTxt" type="text" class="form-control" name="nombreTxt" placeholder="Nombre" />
 
+            </div>
         </div>
-    </div>
 
-    <div class="form-group">
-        <label for="emailTxt" class="control-label col-md-4">Email</label>
-        <div class="col-md-8">
-            <input id="emailTxt" type="text" class="form-control" name="emailTxt" placeholder="Email" />
+        <div class="form-group">
+            <label for="emailTxt" class="control-label col-md-4">Email</label>
+            <div class="col-md-8">
+                <input id="emailTxt" type="text" class="form-control" name="emailTxt" placeholder="Email" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="passwordTxt" class="control-label col-md-4">Password</label>
+            <div class="col-md-8">
+                <input id="passwordTxt" type="text" class="form-control" name="passwordTxt" placeholder="Password" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="rePasswordTxt" class="control-label col-md-4">Re-Password</label>
+            <div class="col-md-8">
+                <input id="rePasswordTxt" type="text" class="form-control" name="rePasswordTxt" placeholder="Re-Password" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" name="btnSubmit" value="Registrar Cuenta" class="btn btn-default" />
+            </div>
         </div>
     </div>
-    <div class="form-group">
-        <label for="passwordTxt" class="control-label col-md-4">Password</label>
-        <div class="col-md-8">
-            <input id="passwordTxt" type="text" class="form-control" name="paswordTxt" placeholder="Password" />
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="rePasswordTxt" class="control-label col-md-4">Email</label>
-        <div class="col-md-8">
-            <input id="rePasswordTxt" type="text" class="form-control" name="rePasswordTxt" placeholder="Re-Password" />
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="button" name="btnSubmit" value="Iniciar Sesión" class="btn btn-default" />
-        </div>
-    </div>
-</div>
+</form>
+   
 
     <script src="~/Scripts/jquery-3.2.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>

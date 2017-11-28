@@ -130,6 +130,7 @@
     <None Include="Connected Services\ServicioUsuario\ServiceUsuario2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Properties\PublishProfiles\CremeBrule - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\CremeBrulev - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
@@ -160,7 +161,6 @@
     <Content Include="Views\Usuario\Index.cshtml" />
     <Content Include="Views\Usuario\Login.cshtml" />
     <Content Include="Views\Usuario\LoginInfo.cshtml" />
-    <Content Include="Views\Carrito\Index.cshtml" />
     <Content Include="Views\Usuario\Perfil.cshtml" />
     <Content Include="Views\Misc\Nosotros.cshtml" />
     <Content Include="Views\Misc\Sucursales.cshtml" />
@@ -213,6 +213,7 @@
     <Content Include="Views\indexAdmin\BuscaProductos.cshtml" />
     <Content Include="Views\indexAdmin\AgregarProducto.cshtml" />
     <Content Include="Views\Usuario\EliminarUsuario.cshtml" />
+    <Content Include="Views\Carrito\MiCarrito.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

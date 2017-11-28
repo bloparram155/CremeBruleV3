@@ -18,7 +18,7 @@ namespace DataAccessLayer.Models
         public int UsuarioID { get; set; }
         public decimal SubTotal { get; set; }
         public decimal Total { get; set; }
-
+        public List<Producto> productoLista = new List<Producto>();
         //Properties
         [ForeignKey("UsuarioID")]
         public Usuario usuario { get; set; }

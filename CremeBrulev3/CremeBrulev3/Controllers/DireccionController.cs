@@ -1,5 +1,5 @@
 ﻿using CremeBrulev3.Context;
-using CremeBrulev3.Models;
+using DataAccessLayer.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,7 @@ namespace CremeBrulev3.Controllers
 {
     public class DireccionController : Controller
     {
-        ContextModel context = new ContextModel();
+       // ContextModel context = new ContextModel();
         // GET: Direccion
         public ActionResult Direccion()
         {
@@ -27,15 +27,15 @@ namespace CremeBrulev3.Controllers
             try
             {
 
-                Direccion dir = new Models.Direccion();
+                Direccion dir = new Direccion();
                 dir.UsuarioID = Int32.Parse(Session["UsuarioID"].ToString());
                 dir.Colonia = coloniaTxt;
                 dir.Calle = calleTxt;
                 dir.Estado = estadoTxt;
                 dir.Ciudad = ciudadTxt;
                 dir.CodigoPostal = codigoPostalTxt;
-                context.Direccion.Add(dir);
-                context.SaveChanges();
+               /* context.Direccion.Add(dir);
+                context.SaveChanges();*/
                 ViewBag.Message= "Dirección registrada.";
             }catch(Exception e)
             {
