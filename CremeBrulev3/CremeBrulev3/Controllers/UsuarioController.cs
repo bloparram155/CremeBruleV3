@@ -198,11 +198,25 @@ namespace CremeBrulev3.Controllers
         }
 
         [HttpPost]
-        public ActionResult Registro(string nombreTxt,string emailTxt,string passwordTxt)
+        public ActionResult Registro(string nombreTxt,string emailTxt,string passwordTxt,string rePasswordTxt)
         {
+            
             try
             {
-                bool status = userLogic.RegistrarUsuario(nombreTxt, emailTxt, passwordTxt);
+                if(passwordTxt == rePasswordTxt)
+                {
+                    //userLogic.EnviarCorreoVerificacion(emailTxt);
+                    bool status = userLogic.RegistrarUsuario(nombreTxt, emailTxt, passwordTxt);
+                    if(status == true)
+                    {
+                        
+                    }
+                }
+                else
+                {
+
+                }
+                
             }
             catch (Exception e)
             {
@@ -252,6 +266,14 @@ namespace CremeBrulev3.Controllers
             }
 
             return View();
+        }
+
+
+        
+        public ActionResult CerrarSesion()
+        {
+            Session.RemoveAll();
+            return Redirect("/Home/Index/");
         }
 
         

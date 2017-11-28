@@ -33,5 +33,11 @@ namespace DataAccessLayer.Entities
             }
             return listaProducto;
         }
+
+        public Producto BuscarProductoSolo(int id)
+        {
+            Producto prod = model.Producto.Where(x => x.ProductoID == id).First();
+            return prod;
+        }
     }
 }
