@@ -6,9 +6,6 @@
     text-align: center;
 }
 
-#titulo {
-    font-size: 3.5em;
-}
 
 #subtitulo {
     font-size: 1.5em;
@@ -23,3 +20,24 @@
     border-bottom: 3px solid rgba(2, 2, 2, 0.2);
     padding: 12px;
 }
+
+.texto {
+    font-size: 1.5em;
+    text-align:justify;
+}
+
+.subtitulos {
+    margin: 10px 0;
+    padding: 12px;
+}
+
+.item {
+    width: 2150px;
+    height: 335px;
+}
+
+#picturemain{
+    height:160px;
+    margin-top:20px
+}
+
