@@ -22,7 +22,6 @@ namespace DataAccessLayer.Models
         //Properties
         [ForeignKey("UsuarioID")]
         public Usuario usuario { get; set; }
-        public ICollection<Producto> listProducto { get; set; }
 
     }
 }
