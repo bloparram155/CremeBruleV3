@@ -105,7 +105,7 @@ namespace BussinessLogic
 
         }*/
 
-        public List<Usuario> ObtenerOrdenesUsuario()
+        public List<Orden> ObtenerOrdenesUsuario()
         {
             var ordenes = dal.ObtenerOrdenesUsuario();
             return ordenes;

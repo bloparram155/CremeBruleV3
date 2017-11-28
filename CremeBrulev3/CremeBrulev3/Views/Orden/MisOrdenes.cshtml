@@ -1,16 +1,16 @@
-﻿@model IEnumerable<DataAccessLayer.Models.Usuario>
+﻿@model IEnumerable<DataAccessLayer.Models.Orden>
 @{
     ViewBag.Title = "MisOrdenes";
 }
 
 <div class="row">
-    <table class="table" id="tablaProductos">
+    <table class="table table-responsive" id="tablaProductos">
         <thead>
             <tr>
                 <th>Nombre</th>
-                <th>Nombre</th>
-                <th>Categoria</th>
-                <th>Presentacion</th>
+                <th>Total</th>
+                <th>Fecha Orden</th>
+                <th>OrdenID</th>
                 <th>Cantidad</th>
                 <th>Precio</th>
             </tr>
@@ -19,7 +19,21 @@
         </tfoot>
         @foreach (var item in Model)
             {
-            
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.usuario.Nombre);
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.carrito.Total);
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaOrden);
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrdenID)
+                </td>
+            </tr>
+
         }
     </table>
 </div>
