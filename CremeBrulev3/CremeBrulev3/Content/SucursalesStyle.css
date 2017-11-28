@@ -1,11 +1,13 @@
-﻿.container {
+﻿
+/*Seccion sucursales y nosotros*/
+
+.container {
     text-align: center;
 }
 
 .col-md-4 {
     text-align: center;
 }
-
 
 #subtitulo {
     font-size: 1.5em;
@@ -29,11 +31,6 @@
 .subtitulos {
     margin: 10px 0;
     padding: 12px;
-}
-
-.item {
-    width: 2150px;
-    height: 335px;
 }
 
 #picturemain{
