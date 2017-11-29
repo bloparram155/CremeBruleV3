@@ -21,6 +21,10 @@ namespace CremeBrulev3.Controllers
        
         public ActionResult AddProducto()
         {
+            if (Session["TipoUsuario"].ToString() == "ADMIN")
+            {
+                return RedirectToAction("Index");
+            }
             return View();
         }
 

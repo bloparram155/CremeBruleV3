@@ -1,6 +1,6 @@
 ﻿using BussinessLogic;
 using CremeBrulev3.Context;
-using CremeBrulev3.Models;
+using DataAccessLayer.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;

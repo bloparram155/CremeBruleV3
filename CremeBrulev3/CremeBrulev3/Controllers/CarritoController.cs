@@ -37,6 +37,10 @@ namespace CremeBrulev3.Controllers
 
         public ActionResult AddCarrito(int ProductoID, int cantidad)
         {
+            if (Session["UsuarioID"] == null)
+            {
+                return Redirect("/Usuario/Login");
+            }
             Carrito carrito = Session["Carrito"] as Carrito;
             if (carrito == null || Session["Carrito"] == null)
             {
@@ -73,11 +77,16 @@ namespace CremeBrulev3.Controllers
       
        public ActionResult RealizarCompra()
         {
+            if (Session["UsuarioID"] == null)
+            {
+                return Redirect("/Usuario/Login");
+            }
             Carrito carrito = Session["Carrito"] as Carrito;
             Session["CarritoID"] = carrito.CarritoID;
             int cartID = Int32.Parse(Session["CarritoID"].ToString());
             int userID = Int32.Parse(Session["UsuarioID"].ToString());
             bool status = cartLogic.RealizarCompra(carrito,userID,cartID);
+            Session.Remove("CarritoID");
             return Redirect("/Home/Index/");
             
         }
