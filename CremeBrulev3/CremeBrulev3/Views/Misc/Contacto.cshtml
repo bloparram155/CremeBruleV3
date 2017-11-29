@@ -7,5 +7,94 @@
     <div class="col-lg-1"><a onclick="history.back()"><h3>Regresar</h3></a></div>
 </div>
 
-<h2>Contacto</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>contacto</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+    <div class="container">
+        <h2>Ponte en contacto con nosotros, de una manera sencilla</h2>
+        <br>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item" style="font-size:20px;">
+                <a class="nav-link active" data-toggle="tab" href="#home">Mandanos un correo</a>
+            </li>
+            <li class="nav-item" style="font-size:20px;">
+                <a class="nav-link" data-toggle="tab" href="#menu1">Redes Sociales</a>
+            </li>
+            <li class="nav-item" style="font-size:20px;">
+                <a class="nav-link" data-toggle="tab" href="#menu2">Telefono</a>
+            </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div id="home" class="container tab-pane active">               
+                <h3>Envianos un correo electronico,<br />con gusto atenderemos tu solicitud. </h3>
+                <div class="row">
+                    <div class="col-md-5" >
+                        <br />
+
+                        <img src="~/images/recorte.png" />
+                    </div>
+
+                    <div class="col-md-7">
+                        <br />
+                        <!-- Api para recibir mails-->
+                        <br />
+                        <a id="foxyform_embed_link_323798" href="http://es.foxyform.com/">foxyform</a>
+                        <script type="text/javascript" >
+                            (function (d, t) {
+                                var g = d.createElement(t),
+                                    s = d.getElementsByTagName(t)[0];
+                                g.src = "http://es.foxyform.com/js.php?id=323798&sec_hash=5a0795afbfb&width=350px";
+                                s.parentNode.insertBefore(g, s);
+                            }(document, "script"));
+                        </script>
+                        <!-- mails -->
+                    </div>
+                </div>
+                
+            </div>
+            <div id="menu1" class="container tab-pane fade">
+                <br>
+                <h3>Puedes encontrarnos ahora en tus Redes Sociales.</h3>
+                <br />
+                <a target="_blank" href="https://www.facebook.com/sfleon/">
+                    <img src="~/images/Facebook-create.png" style="width:900px; height:300px;" class="img-rounded" alt="Facebook" />
+                </a>
+            </div>
+
+
+            <div id="menu2" class="container tab-pane fade">
+                <br>
+                <h3>Contactanos por telefono</h3>
+                <div class="row">
+                    <br />
+                    <img style=" height:335px; width:1170px;" src="~/images/contactanos.jpg" class="img-responsive;"/>
+                </div>
+                <div class="row">
+                    <div class="col-md-12" >
+                        <img src="~/images/movil.png" style="width:200px; height:200px; float:left;"/>
+
+                        <div style="display:inline-block;float:left; margin-top:70px;">
+                            <h1>01 622 222 0774</h1>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+    </div>
+    </div>
+
+</body>
+</html>
 
