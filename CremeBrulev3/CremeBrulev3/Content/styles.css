@@ -96,3 +96,7 @@ h2{
 #tarjeta {
     border: 1px solid black;
 }
+
+.textoTarjeta{
+    text-align: center;
+}

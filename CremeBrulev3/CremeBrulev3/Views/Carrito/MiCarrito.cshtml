@@ -5,76 +5,49 @@
 
 
 <div class="row">
-    <table class="table" id="tablaProductos">
-        <thead>
-            <tr>
-                <th>ProductoID</th>
-                <th>Nombre</th>
-                <th>Categoria</th>
-                <th>Presentacion</th>
-                <th>Precio</th>
-                <th>Cantidad</th>
-            </tr>
-        </thead>
-        <tfoot>
-        </tfoot>
-        @foreach (var item in Model)
-            {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ProductoID)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nombre)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Categoria)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Presentacion)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Precio)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Cantidad)
-                </td>
-                <td></td>
-            </tr>
-        }
-    </table>
-    
-        <div class="form-horizontal">
-            <div class="col-sm-4">
-                <div class="form-group">
-                    <label for="SubtotalTxt" class="control-label col-sm-6">SubTotal</label>
-                    <div class="col-sm-6">
-                        <input id="SubtotalTxt" value="@Session["CarritoSub"]" type="number" class="form-control" name="SubtotalTxt"/>
-                    </div>
+
+    @foreach (var item in Model)
+    {
+        <div class="col-xs-2 catalogo">
+            <div class="card" style="width: 20rem;">
+                <img class="card-img-top" src="~/images/productos/11309649-5684484572839147.jpg" alt="Card image cap" height="200" width="180">
+                <div class="card-body">
+                    <p class="card-text textoTarjeta">@Html.DisplayFor(modelItem => item.Nombre)</p>
+                    <p class="card-text textoTarjeta">@Html.DisplayFor(modelItem => item.Presentacion)</p>
+                    <p class="card-text textoTarjeta">@Html.DisplayFor(modelItem => item.Categoria)</p>
+                    <p class="card-text textoTarjeta">@Html.DisplayFor(modelItem => item.Precio)</p>
+
                 </div>
             </div>
-
-
-            <div class="col-sm-4">
-                <div class="form-group">
-                    <label for="TotalTxt" class="control-label col-sm-6">Total</label>
-                    <div class="col-sm-6">
-                        <input id="TotalTxt" value="@Session["CarritoTotal"]" type="number" class="form-control" name="TotalTxt"/>
-                    </div>
-                </div>
+        </div>
+    }
+</div><div class="form-horizontal">
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label for="SubtotalTxt" class="control-label col-sm-6">SubTotal</label>
+            <div class="col-sm-6">
+                <input id="SubtotalTxt" value="@Session["CarritoSub"]" type="number" class="form-control" name="SubtotalTxt" />
             </div>
+        </div>
+    </div>
 
 
-            <div class="col-sm-4">
-                <div class="form-group">
-                    <div class="col-sm-6">
-                        @Html.ActionLink("Realizar Compra", "RealizarCompra", "Carrito");
-
-                    </div>
-                </div>
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label for="TotalTxt" class="control-label col-sm-6">Total</label>
+            <div class="col-sm-6">
+                <input id="TotalTxt" value="@Session["CarritoTotal"]" type="number" class="form-control" name="TotalTxt" />
             </div>
-        </div>   
+        </div>
+    </div>
 
 
+    <div class="col-sm-4">
+        <div class="form-group">
+            <div class="col-sm-6">
+                @Html.ActionLink("Realizar Compra", "RealizarCompra", "Carrito");
 
-
+            </div>
+        </div>
+    </div>
+</div>
