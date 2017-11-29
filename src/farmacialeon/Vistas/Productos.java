@@ -5,7 +5,6 @@
  */
 package farmacialeon.Vistas;
 
-import farmacialeon.Conexion;
 import java.sql.*;
 import javax.swing.table.DefaultTableModel;
 
@@ -14,8 +13,6 @@ import javax.swing.table.DefaultTableModel;
  * @author Mario Ruiz
  */
 public class Productos extends javax.swing.JFrame {
-Conexion c = new Conexion();
-Connection cb = c.Conectar();
     /**
      * Creates new form Productos
      */
