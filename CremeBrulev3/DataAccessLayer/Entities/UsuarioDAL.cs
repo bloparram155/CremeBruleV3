@@ -72,5 +72,11 @@ namespace DataAccessLayer.Entities
             return status;
 
         }
+
+        public List<Orden> ObtenerOrdenesUsuario()
+        {
+            var ordenes = model.Orden.Include(x => x.carrito).Include(y => y.usuario).ToList();
+            return ordenes;
+        }
     }
 }

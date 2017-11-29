@@ -1,6 +1,6 @@
 ﻿using BussinessLogic;
 using CremeBrulev3.Context;
-using CremeBrulev3.Models;
+using DataAccessLayer.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -36,21 +36,21 @@ namespace CremeBrulev3.Controllers
         {
             try
             {
-                
-                if (userLogic.Login(emailTxt, passwordTxt) != null)
+                var usuario = userLogic.Login(emailTxt.Trim(), passwordTxt.Trim());
+                if (usuario != null)
                 {
-                    Session["UsuarioID"] = userLogic.Login(emailTxt, passwordTxt).UsuarioID.ToString();
-                    Session["Nombre"] = userLogic.Login(emailTxt, passwordTxt).Nombre.ToString();
-                    Session["Email"] = userLogic.Login(emailTxt, passwordTxt).Email.ToString();
-                    Session["Password"] = userLogic.Login(emailTxt, passwordTxt).Password.ToString();
-                    Session["TipoUsuario"] = userLogic.Login(emailTxt, passwordTxt).TipoUsuario.ToString();
+                    Session["UsuarioID"] = usuario.UsuarioID;
+                    Session["Nombre"] = usuario.Nombre;
+                    Session["Email"] = usuario.Email;
+                    Session["Password"] = usuario.Password;
+                    Session["TipoUsuario"] = usuario.TipoUsuario;
                     if(Session["TipoUsuario"].ToString() == "ADMIN")
                     {
                         return Redirect("/indexAdmin/Index/");
                     }
                     else
                     {
-                        return RedirectToAction("Index");
+                        return Redirect("/Producto/Index/");
                     }
                     
 

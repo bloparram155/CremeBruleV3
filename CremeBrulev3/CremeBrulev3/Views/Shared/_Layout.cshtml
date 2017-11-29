@@ -16,12 +16,12 @@
         <div class="container-fluid">
             <div class="row" id="logo"></div>
             <div class="row navi">
-                <div class="col-lg-9">
+                <div class="col-lg-10">
                     <div class="navbar-header">
                         <a class="navbar-brand headerleon" href="@Url.Action("Index","Home")"><h1>Farmacia León</h1></a>
                     </div>
                 </div>
-                <div class="input-group" id="buscar">
+                <div class="input-group col-lg-2" id="buscar">
                     <input type="text" class="form-control" placeholder="Search">
                     <div class="input-group-btn">
                         <button class="btn btn-default" type="submit">
@@ -31,16 +31,18 @@
                 </div>
             </div>
             <div class="row navi">
-                <div class="col-lg-7">
-                    <div class="nav navbar-nav" id="headernav">
-                        <li><a href="@Url.Action("Nosotros","Misc")">Nosotros</a></li>
-                        <li><a href="@Url.Action("Sucursales","Misc")">Sucursales</a></li>
-                        <li><a href="@Url.Action("Contacto","Misc")">Contacto</a></li>
+                <div class="col-sm-7">
+                    <ul class="nav navbar-nav" id="headernav">
+                        
+                            <li><a href="@Url.Action("Nosotros","Misc")">Nosotros</a></li>
+                            <li><a href="@Url.Action("Sucursales","Misc")">Sucursales</a></li>
+                            <li><a href="@Url.Action("Contacto","Misc")">Contacto</a></li>
+                        
                         
                             <ul class="nav navbar-header">
                                 <li class="dropdown">
                                     <a class="dropdown-toggle headerleon" id="productos" data-toggle="dropdown" href="#">
-                                        Productos
+                                        Categorias
                                         <span class="caret"></span>
                                     </a>
                                     <ul class="dropdown-menu">
@@ -51,10 +53,9 @@
                                     </ul>
                                 </li>
                             </ul>
-                        </li>
-                    </div>
+                    </ul>
                 </div>
-                <div class="col-lg-5">
+                <div class="col-sm-5">
                     <ul class="nav navbar-nav navbar-right">
                         @if (Session["UsuarioID"] == null)
                         {

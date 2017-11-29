@@ -1,159 +1,26 @@
 ﻿@model IEnumerable<DataAccessLayer.Models.Producto>
 @{
-    Layout = null;
+    ViewBag.Title = "VerCarrito";
 }
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/styles.css" rel="stylesheet" type="text/css" />
-    <script src="~/Scripts/modernizr-2.6.2.js"></script>
-</head>
 
-<body>
-    <header class="nav navbar-inverse">
-        <div class="container-fluid">
-            <div class="row" id="logo"></div>
-            <div class="row navi">
-                <div class="col-lg-10">
-                    <div class="navbar-header">
-                        <a class="navbar-brand headerleon" href="@Url.Action("Index","Home")"><h1>Farmacia León</h1></a>
-                    </div>
-                </div>
-                <div class="input-group" id="buscar">
-                    <input type="text" class="form-control" placeholder="Search">
-                    <div class="input-group-btn">
-                        <button class="btn btn-default" type="submit">
-                            <i class="glyphicon glyphicon-search"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="row navi">
-                <div class="col-lg-9">
-                    <div class="nav navbar-nav" id="headernav">
-                        <li><a href="@Url.Action("Nosotros","Misc")">Nosotros</a></li>
-                        <li><a href="@Url.Action("Sucursales","Misc")">Sucursales</a></li>
-                        <li><a href="@Url.Action("Contacto","Misc")">Contacto</a></li>
-
-                        <ul class="nav navbar-header">
-                            <li class="dropdown">
-                                <a class="dropdown-toggle headerleon" id="productos" data-toggle="dropdown" href="#">
-                                    Productos
-                                    <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#"></a></li>
-                                    <li><a href="#">Belleza</a></li>
-                                    <li><a href="#">Salud</a></li>
-                                    <li><a href="#">Cuidado Personal</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        </li>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <ul class="nav navbar-nav navbar-right">
-                        @if (Session["UsuarioID"] == null)
-                        {
-                            <li><a href="@Url.Action("Registro","Usuario")"><span class="glyphicon glyphicon-user"></span> Registrarse</a></li>
-                            <li><a href="@Url.Action("Login","Usuario")"><span class="glyphicon glyphicon-log-in"></span> Iniciar Sesión</a></li>
-                        }
-                        <li><a href="@Url.Action("Index","Carrito")"><span class="glyphicon glyphicon-shopping-cart"></span> Carrito</a></li>
-                        @if (Session["UsuarioID"] != null)
-                        {
-                            <ul class="nav navbar-header">
-                                <li class="dropdown">
-                                    <a class="dropdown-toggle headerleon" id="productos" data-toggle="dropdown" href="#">
-                                        <span class="glyphicon glyphicon-cog"></span>
-                                        Tu Cuenta
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <a href="@Url.Action("Perfil","Usuario")"><span class="glyphicon glyphicon-cog"></span>Tu Perfil</a>
-                                    </ul>
-                                </li>
-                            </ul>
-
-
-
-
-                        }
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-2 asideadmin">
-                <ul class="form-group">
-
-                </ul>
-            </div>
-            <div class="col-sm-10">
-                <table class="table table-bordered table-responsive table-hover" id="tablaProductos">
-                    <thead>
-                        <tr>
-                            <th>ProductoID</th>
-                            <th>Nombre</th>
-                            <th>Categoria</th>
-                            <th>Presentacion</th>
-                            <th>Cantidad</th>
-                            <th>Precio</th>
-                            <th>Opciones</th>
-                        </tr>
-                    </thead>
-                    
                     @foreach (var item in Model)
                     {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.ProductoID)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Nombre)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Categoria)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Presentacion)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Cantidad)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Precio)
-                            </td>
-                            <td>
-                                @Html.ActionLink("Agregar al carrito","AddCarrito","Carrito", new { ProductoID = item.ProductoID, Cantidad = 1},null);
-                                
-               
-                            </td>
-                        </tr>
+                    <div class="col-xs-2 catalogo">
+                        <div class="card" style="width: 20rem;">
+                            <img class="card-img-top" src="~/images/productos/11309649-5684484572839147.jpg" alt="Card image cap" height="200" width="180">
+                            <div class="card-body">
+                                <p class="card-text textoTarjeta border">@Html.DisplayFor(modelItem => item.Nombre)</p>
+                                <p class="card-text textoTarjeta">@Html.DisplayFor(modelItem => item.Presentacion)</p>
+                                <p class="card-text textoTarjeta">@Html.DisplayFor(modelItem => item.Categoria)</p>
+                                <p class="card-text textoTarjeta">@Html.DisplayFor(modelItem => item.Precio)</p>
+                                <button type="button" class="btn btn-light">@Html.ActionLink("Agregar al carrito", "AddCarrito", "Carrito", new { ProductoID = item.ProductoID, Cantidad = 1 }, null)</button>
+                            </div>
+                        </div>
+                    </div>
                     }
-                    <tfoot>
-                    </tfoot>
-                </table>
-            </div>
-            
+                </div>
         </div>
-
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
-
-
     <script src="~/Scripts/jquery-3.2.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
-</body>
-</html>
+

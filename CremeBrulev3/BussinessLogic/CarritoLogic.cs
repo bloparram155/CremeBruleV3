@@ -1,4 +1,5 @@
-﻿using DataAccessLayer.Models;
+﻿using DataAccessLayer.Entities;
+using DataAccessLayer.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace BussinessLogic
 {
     public class CarritoLogic
     {
-
+        CarritoDAL cartDal = new CarritoDAL();
         public decimal ObtenerSubTotal(List<Producto> producto)
         {
             decimal subtotal=0;
@@ -32,6 +33,19 @@ namespace BussinessLogic
             }
 
             return total;
+        }
+
+        public bool RealizarCompra(Carrito carrito, int usuarioId, int carritoId)
+        {
+            carrito.UsuarioID = usuarioId;
+            cartDal.AgregarCarrito(carrito);
+            var cart= cartDal.ObtenerUltimoCarrito();
+            Orden orden = new Orden();
+            orden.UsuarioID = usuarioId;
+            orden.CarritoID = cart.CarritoID;
+            orden.FechaOrden = DateTime.Now;
+            cartDal.AgregarOrden(orden);
+            return true;
         }
     }
 }

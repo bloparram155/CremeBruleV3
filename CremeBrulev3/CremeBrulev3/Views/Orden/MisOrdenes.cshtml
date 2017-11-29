@@ -1,0 +1,49 @@
+﻿@model IEnumerable<DataAccessLayer.Models.Orden>
+@{
+    ViewBag.Title = "MisOrdenes";
+}
+
+<div class="row">
+    <table class="table table-responsive" id="tablaProductos">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Fecha Orden</th>
+                <th>Orden ID</th>
+                <th>Precio</th>
+                <th>Productos Comprado</th>
+                
+            </tr>
+        </thead>
+        <tfoot>
+        </tfoot>
+        @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.usuario.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaOrden)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrdenID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.carrito.Total)
+                </td>
+                <td>
+                    @foreach (var lista in item.carrito.productoLista)
+                    {
+                        @Html.DisplayFor(list => lista.Nombre)
+                    }
+                   
+                </td>
+            </tr>
+
+        }
+    </table>
+</div>
+
+ 
+

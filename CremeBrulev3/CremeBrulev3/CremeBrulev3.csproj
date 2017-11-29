@@ -150,7 +150,6 @@
     <Content Include="images\naturalesFL.jpg" />
     <Content Include="images\navidad.jpg" />
     <Content Include="images\plantas-medicinales-2.jpg" />
-    <Content Include="images\recorte.png" />
     <Content Include="images\slide1.jpg" />
     <Content Include="images\slide_3.jpg" />
     <Content Include="Scripts\bootstrap.js" />
@@ -184,16 +183,12 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\indexAdminController.cs" />
     <Compile Include="Controllers\MiscController.cs" />
+    <Compile Include="Controllers\OrdenController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Carrito.cs" />
-    <Compile Include="Models\Direccion.cs" />
-    <Compile Include="Models\Orden.cs" />
-    <Compile Include="Models\Producto.cs" />
-    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -219,6 +214,7 @@
     <Content Include="Views\indexAdmin\AgregarProducto.cshtml" />
     <Content Include="Views\Usuario\EliminarUsuario.cshtml" />
     <Content Include="Views\Carrito\MiCarrito.cshtml" />
+    <Content Include="Views\Orden\MisOrdenes.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -228,6 +224,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
