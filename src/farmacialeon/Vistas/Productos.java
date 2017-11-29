@@ -6,9 +6,7 @@
 package farmacialeon.Vistas;
 
 import farmacialeon.Conexion;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -88,25 +86,27 @@ Connection cb = c.Conectar();
         Tabla.addColumn("Cantidad");
         Tabla.addColumn("Precio");
         Productos.setModel(Tabla);
-        Productos.getColumnModel().getColumn(0).setPreferredWidth(109);
-        
         String [] datos = new String [7];
         try {
+           Connection conect = null;
+           Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+           String url = String.format("jdbc:sqlserver://farmacialeon.database.windows.net:1433;database=LeoDb;user=administrador@farmacialeon;password=Aplicaciones.;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;");
+           conect = DriverManager.getConnection(url);
        
-        PreparedStatement ps = cb.prepareStatement("select * from producto");
+        PreparedStatement ps = conect.prepareStatement("select * from dbo.producto");
         ResultSet rs = ps.executeQuery();
+         while(rs.next()){           
+ datos[0]=rs.getString(1);
+  datos[1]=rs.getString(2);
+   datos[2]=rs.getString(3);
+    datos[3]=rs.getString(4);
+     datos[4]=rs.getString(5);
+      datos[5]=rs.getString(6);
+       datos[6]=rs.getString(7);
+   
+ Tabla.addRow(datos);
+         }
         
-        while(rs.next()){           
-        datos[0]=rs.getString(1);
-        datos[1]=rs.getString(2); 
-        datos[2]=rs.getString(3); 
-        datos[3]=rs.getString(4); 
-        datos[4]=rs.getString(5); 
-        datos[5]=rs.getString(6); 
-        datos[6]=rs.getString(7); 
-        Tabla.addRow(datos);
-        
-        }
    }
     catch (Exception e) {
         System.out.println(e);
