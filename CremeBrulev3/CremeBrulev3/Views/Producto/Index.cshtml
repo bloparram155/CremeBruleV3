@@ -1,26 +1,25 @@
 ﻿@model IEnumerable<DataAccessLayer.Models.Producto>
 @{
-    ViewBag.Title = "VerCarrito";
+    ViewBag.Title = "Index";
 }
-    <div class="container">
-            <div class="row">
-                    @foreach (var item in Model)
-                    {
-                    <div class="col-xs-2 catalogo">
-                        <div class="card" style="width: 20rem;">
-                            <img class="card-img-top" src="~/images/productos/11309649-5684484572839147.jpg" alt="Card image cap" height="200" width="180">
-                            <div class="card-body">
-                                <p class="card-text textoTarjeta border">@Html.DisplayFor(modelItem => item.Nombre)</p>
-                                <p class="card-text textoTarjeta">@Html.DisplayFor(modelItem => item.Presentacion)</p>
-                                <p class="card-text textoTarjeta">@Html.DisplayFor(modelItem => item.Categoria)</p>
-                                <p class="card-text textoTarjeta">@Html.DisplayFor(modelItem => item.Precio)</p>
-                                <button type="button" class="btn btn-light">@Html.ActionLink("Agregar al carrito", "AddCarrito", "Carrito", new { ProductoID = item.ProductoID, Cantidad = 1 }, null)</button>
-                            </div>
-                        </div>
+
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-xs-2 catalogo">
+                <div class="card" style="width: 20rem;">
+                    <img class="card-img-top" src="~/images/productos/11309649-5684484572839147.jpg" alt="Card image cap" height="200" width="180">
+                    <div class="card-body">
+                        <p class="card-text textoTarjeta border">@Html.DisplayFor(modelItem => item.Nombre)</p>
+                        <p class="card-text textoTarjeta">@Html.DisplayFor(modelItem => item.Presentacion)</p>
+                        <p class="card-text textoTarjeta">@Html.DisplayFor(modelItem => item.Categoria)</p>
+                        <p class="card-text textoTarjeta">@Html.DisplayFor(modelItem => item.Precio)</p>
+                        <button type="button" class="btn btn-light">@Html.ActionLink("Agregar al carrito", "AddCarrito", "Carrito", new { ProductoID = item.ProductoID, Cantidad = 1 }, null)</button>
                     </div>
-                    }
                 </div>
-        </div>
-    <script src="~/Scripts/jquery-3.2.1.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
+            </div>
+        }
+    </div>
+</div>
 

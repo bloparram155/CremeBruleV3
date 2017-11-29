@@ -86,7 +86,7 @@ namespace CremeBrulev3.Controllers
             int cartID = Int32.Parse(Session["CarritoID"].ToString());
             int userID = Int32.Parse(Session["UsuarioID"].ToString());
             bool status = cartLogic.RealizarCompra(carrito,userID,cartID);
-            Session.Remove("CarritoID");
+            Session.Remove("Carrito");
             return Redirect("/Home/Index/");
             
         }

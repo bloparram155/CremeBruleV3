@@ -1,4 +1,5 @@
-﻿using CremeBrulev3.Context;
+﻿
+using BussinessLogic;
 using DataAccessLayer.Models;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ namespace CremeBrulev3.Controllers
 {
     public class DireccionController : Controller
     {
-       // ContextModel context = new ContextModel();
+        UsuarioLogic userLogic = new UsuarioLogic();
         // GET: Direccion
         public ActionResult Direccion()
         {
@@ -34,8 +35,7 @@ namespace CremeBrulev3.Controllers
                 dir.Estado = estadoTxt;
                 dir.Ciudad = ciudadTxt;
                 dir.CodigoPostal = codigoPostalTxt;
-               /* context.Direccion.Add(dir);
-                context.SaveChanges();*/
+                userLogic.RegistrarDireccion(dir);
                 ViewBag.Message= "Dirección registrada.";
             }catch(Exception e)
             {
