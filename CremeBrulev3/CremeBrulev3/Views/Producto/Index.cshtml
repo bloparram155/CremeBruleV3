@@ -90,14 +90,25 @@
         </div>
     </header>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-2 asideadmin">
-                <ul class="form-group">
+    <div class="container">
 
-                </ul>
-            </div>
-            <div class="col-sm-10">
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                    <div class="col-xs-2 catalogo">
+                        <div class="card" style="width: 20rem;">
+                            <img class="card-img-top" src="~/images/productos/11309649-5684484572839147.jpg" alt="Card image cap" height="200" width="180">
+                            <div class="card-body">
+                                <p class="card-text">@Html.DisplayFor(modelItem => item.Nombre)</p>
+                                <p class="card-text">@Html.DisplayFor(modelItem => item.Presentacion)</p>
+                                <p class="card-text">@Html.DisplayFor(modelItem => item.Categoria)</p>
+                                <p class="card-text">@Html.DisplayFor(modelItem => item.Precio)</p>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
+
                 <table class="table table-bordered table-responsive table-hover" id="tablaProductos">
                     <thead>
                         <tr>
@@ -142,17 +153,12 @@
                     <tfoot>
                     </tfoot>
                 </table>
-            </div>
-            
         </div>
 
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
-    </div>
-
-
     <script src="~/Scripts/jquery-3.2.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
