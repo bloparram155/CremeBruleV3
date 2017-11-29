@@ -75,7 +75,7 @@ namespace DataAccessLayer.Entities
 
         public List<Orden> ObtenerOrdenesUsuario()
         {
-            var ordenes = model.Orden.Include(x => x.CarritoID).Include(y => y.UsuarioID).ToList();
+            var ordenes = model.Orden.Include(x => x.carrito).Include(y => y.usuario).ToList();
             return ordenes;
         }
     }

@@ -14,6 +14,10 @@ namespace CremeBrulev3.Controllers
 
         public ActionResult MisOrdenes()
         {
+            if (Session["UsuarioID"] == null)
+            {
+                return Redirect("/Usuario/Login");
+            }
             return View(userLogic.ObtenerOrdenesUsuario());
         }
 
