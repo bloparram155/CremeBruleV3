@@ -37,22 +37,9 @@
                             <li><a href="@Url.Action("Nosotros","Misc")">Nosotros</a></li>
                             <li><a href="@Url.Action("Sucursales","Misc")">Sucursales</a></li>
                             <li><a href="@Url.Action("Contacto","Misc")">Contacto</a></li>
+                            <li><a href="@Url.Action("Index","Producto")">Productos</a></li>
                         
-                        
-                            <ul class="nav navbar-header">
-                                <li class="dropdown">
-                                    <a class="dropdown-toggle headerleon" id="productos" data-toggle="dropdown" href="#">
-                                        Categorias
-                                        <span class="caret"></span>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#">Belleza</a></li>
-                                        <li><a href="#">Salud</a></li>
-                                        <li><a href="#">Cuidado Personal</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
+                          
                     </ul>
                 </div>
                 <div class="col-sm-5">
@@ -64,25 +51,37 @@
                             
                         }
                        
-                        @if (Session["UsuarioID"] != null)
+                        @if (Session["UsuarioID"] != null && Session["TipoUsuario"].ToString() == "USER")
                         {
-                            <li><a href="@Url.Action("MiCarrito","Carrito")"><span class="glyphicon glyphicon-shopping-cart"></span> Carrito</a></li>
-                            <ul class="nav navbar-header">
+
+                                <li><a href="@Url.Action("MiCarrito","Carrito")"><span class="glyphicon glyphicon-shopping-cart"></span>Carrito</a></li>
                                 <li class="dropdown">
                                     <a class="dropdown-toggle headerleon" id="productos" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog"></span>
                                         Tu Cuenta
                                     </a>
                                     <ul class="dropdown-menu">
+                                        
                                         <li><a href="@Url.Action("Perfil","Usuario")"><span class="glyphicon glyphicon-cog"></span>Tu Perfil</a></li>
-                                        <li><a href="@Url.Action("Ordenes","Orden")">Tus Ordenes</a></li>
+                                        <li><a href="@Url.Action("MisOrdenes","Orden")">Tus Ordenes</a></li>
                                         <li><a href="@Url.Action("CerrarSesion","Usuario")">Cerrar Sesión</a></li>
                                     </ul>
                                 </li>
-                            </ul>
-                                
-                            
-                            
-       
+
+                        }
+
+                        @if (Session["UsuarioID"] != null && Session["TipoUsuario"].ToString() == "ADMIN")
+                        {
+                            <li class="dropdown">
+                                <a class="dropdown-toggle headerleon" id="productos" data-toggle="dropdown" href="#">
+                                    <span class="glyphicon glyphicon-cog"></span>
+                                    Panel Admin
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="@Url.Action("Index","indexAdmin")"><span class="glyphicon glyphicon-cog"></span>Perfil Configuraciones</a></li>
+                                    
+                                    <li><a href="@Url.Action("CerrarSesion","Usuario")">Cerrar Sesión</a></li>
+                                </ul>
+                            </li>
                         }
                     </ul>
                 </div>

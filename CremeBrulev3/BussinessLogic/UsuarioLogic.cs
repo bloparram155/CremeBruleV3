@@ -79,31 +79,12 @@ namespace BussinessLogic
             return status;
         }
 
-        /*public bool EnviarCorreoVerificacion(string Emailto)
+        public bool RegistrarDireccion(Direccion direccion)
         {
-            
-            MailMessage msj = new MailMessage();
-            SmtpClient smtp = new SmtpClient();
-            try
-            {
+            dal.RegistrarDireccion(direccion);
+            return true;
 
-                msj.From = new MailAddress("rl.navarrete78923@gmail.com");
-                msj.To.Add(new MailAddress(Emailto));
-                msj.Body = "Test Mensaje";
-                smtp.Host = "smtp.gmail.com";
-                smtp.Port = 25;
-                smtp.Credentials = new NetworkCredential("rl.navarrete78923@gmail.com", "star45rf1234");
-                smtp.EnableSsl = true;
-                smtp.Send(msj);
-                
-                return true;
-            }catch(Exception e)
-            {
-                return false;
-            }
-           
-
-        }*/
+        }
 
         public List<Orden> ObtenerOrdenesUsuario()
         {

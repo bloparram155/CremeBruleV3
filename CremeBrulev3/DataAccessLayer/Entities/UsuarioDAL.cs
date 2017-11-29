@@ -78,5 +78,12 @@ namespace DataAccessLayer.Entities
             var ordenes = model.Orden.Include(x => x.carrito).Include(y => y.usuario).ToList();
             return ordenes;
         }
+
+        public bool RegistrarDireccion (Direccion direccion)
+        {
+            model.Direccion.Add(direccion);
+            model.SaveChanges();
+            return true;
+        }
     }
 }
