@@ -152,6 +152,7 @@
     <Content Include="images\plantas-medicinales-2.jpg" />
     <Content Include="images\slide1.jpg" />
     <Content Include="images\slide_3.jpg" />
+    <Content Include="images\terramicina.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
