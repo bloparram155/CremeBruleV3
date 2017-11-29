@@ -50,7 +50,7 @@ namespace CremeBrulev3.Controllers
                     }
                     else
                     {
-                        return RedirectToAction("Index");
+                        return Redirect("/Producto/Index/");
                     }
                     
 
